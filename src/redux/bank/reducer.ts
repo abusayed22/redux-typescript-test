@@ -1,14 +1,20 @@
-import { DEPOSIT, WITHDROW } from './actionType';
+import { ActionT } from './action';
+import { Action } from './actionType';
 import { initState } from './initState';
 
-const reducer = (state = initState,aciton) => {
+
+
+const reducer = (state = initState,aciton : ActionT) => {
     switch (action.type) {
-        case DEPOSIT:
-            return state + aciton.payload
+        case Action.DEPOSIT:
+            return state + 
     
-        case WITHDROW:
+        case Action.WITHDROW:
             return state - aciton.payload
+        case Action.BANKRUPT:
+            return 0
         default:
             return state;
     }
 }
+export default reducer;

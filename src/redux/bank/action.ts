@@ -1,15 +1,14 @@
-import { DEPOSIT, WITHDROW } from './actionType';
+import { Action } from './actionType';
 
-
-export const depositAction = (amount: number) => {
-    return {
-        type: DEPOSIT,
-        payload: amount
-    }
+interface depositAction {
+    type: Action.DEPOSIT,
+    payload?: number
 }
-export const withdrowAction = (amount: number) => {
-    return {
-        type: WITHDROW, 
-        payload: amount
-    }
+interface withdrowAction {
+    type: Action.WITHDROW,
+    payload?: number
 }
+interface bankruptAction {
+    type:Action.BANKRUPT,
+}
+export type ActionT = bankruptAction | withdrowAction | depositAction

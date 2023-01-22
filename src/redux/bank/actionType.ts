@@ -1,3 +1,6 @@
-export const DEPOSIT = 'BANK/DEPOSIT'
-export const WITHDROW = 'BANK/WITHDROW'
-export const BANKRUPT = 'BANK/BANKRUPT'
+
+export enum Action {
+    BANKRUPT = 'BANK/BANKRUPT',
+    WITHDROW = 'BANK/WITHDROW',
+    DEPOSIT = 'BANK/DEPOSIT'
+}

@@ -1,2 +1,2 @@
 
-export const initState = 100000
+export const initState = 100000;
