@@ -1,32 +1,43 @@
-import { Action } from './actionType';
+import { Dispatch } from 'redux';
+import { ActionT } from './actionType';
+
 
 interface depositAction {
-    type: Action.DEPOSIT,
-    payload?: number
+    type: ActionT.DEPOSIT,
+    payload: number
 }
 interface withdrowAction {
-    type: Action.WITHDROW,
-    payload?: number
+    type: ActionT.WITHDROW,
+    payload: number
 }
 interface bankruptAction {
-    type:Action.BANKRUPT,
+    type:ActionT.BANKRUPT,
 }
-export type ActionT = bankruptAction | withdrowAction | depositAction
+
+export type Action = bankruptAction | withdrowAction | depositAction
+
 
 export const depositMoney = (amount: number) => {
-    return {
-        type: Action.DEPOSIT,
-        payload: amount
+    return (dispatch: Dispatch<Action>) => {
+         dispatch({
+            type: ActionT.DEPOSIT,
+            payload: amount
+        })
     }
 }
 export const withdrowMoney = (amount:number) => {
-    return {
-        type: Action.WITHDROW,
-        payload: amount
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionT.WITHDROW,
+            payload: amount
+        })
     }
 }
 export const bankruptMoney = () => {
-    return {
-        type: Action.BANKRUPT
+    return (dispatch:Dispatch<Action>) => {
+        dispatch({
+            type:ActionT.BANKRUPT
+        
+        })
     }
 }
